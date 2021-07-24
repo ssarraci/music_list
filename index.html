@@ -7,18 +7,38 @@
     </head>
         <body>
             <h1>Music</h1>
-            <h2>KPOP</h2>
+            <h2 id="input">K-POP EDITION</h2>
             <button id="songs">Songs</button>
-            <hr>
             <br>
-            <div id="main">
-                <ul id="song-list">
+            <hr>
+        <div id="main">
+            <ul id="song-list">
 
-                </ul>
-                <div id="info">
-                    
-                </div>
+            </ul>
+            <div id="info">
+
             </div>
-            <script src="index.js"></script>
+    
+        </div>
+        <br>
+        <hr>
+    
+        <div id="comments">
+            <h2>Write a comment!</h2>
+
+            <form id="comment-form">
+                <div class="field">
+                    <input id="new-comment" type="text" placeholder="New Comment" />
+                    <input type="submit" class="btn" value="Submit"/>
+                </div>
+            </form>
+            
+            <div id="commentsContainer">
+                <h3>Comments</h3>
+
+            </div>
+        </div>
+
+        <script src="index.js"></script>
         </body>
 </html>
