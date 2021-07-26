@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('songs').addEventListener('click', getSongs)
-  //commentSection()
-  //getSongs()
 })
 
 function getSongs() {
@@ -13,7 +11,6 @@ function getSongs() {
       .then(resp => resp.json())
       .then(data => {
         data.results.map(song => { 
-          //console.log(song)
           songList.innerHTML += `
             <li>
              <a href="#" data-name="${song.trackName}"
@@ -33,8 +30,6 @@ function attachLinks() {
 }
 
 function displaySong(event) {
-  //console.log(event.target)
-  let a = event.target
   let songList = document.getElementById('song-list')
   let info = document.getElementById('info')
   songList.innerHTML= ""
@@ -85,12 +80,10 @@ function commentSection() {
     const userInput = event.target.querySelector('#new-comment').value
     const commentPTag = document.createElement('p')
     commentPTag.innerHTML = userInput
-    //commentPTag.insertAdjacentHTML('beforeend', userInput)
-    //commentsContainer.insertAdjacentHTML('afterend', `<p id="comment> `)
     commentsContainer.appendChild(commentPTag)
     commentForm.reset()
   })
 }
-//somehow target the objects in the array. Maybe try to use a for loop like results[i].trackName, so on?
+
 
 
