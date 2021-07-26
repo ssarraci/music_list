@@ -19,7 +19,6 @@ function getSongs() {
              <a href="#" data-name="${song.trackName}"
              data-id="${song.trackId}"> ${song.trackName} </a>
             </li>
-
           `
         })
         attachLinks()
@@ -43,14 +42,15 @@ function displaySong(event) {
   fetch(`https://itunes.apple.com/lookup?id=${event.target.dataset.id}`)
       .then(resp => resp.json())
       .then(data => {
-        data.results.map(song => { 
-          //console.log(song)
+        let s = data.results[0]
+        console.log(data)
+        console.log(s)
             info.innerHTML += `
-              <h1>${song.trackName}</h1>
+              <h1>${s.trackName}</h1>
               <h2>Artist Name:</h2>
-              <p>${song.artistName}</p>
+              <p>${s.artistName}</p>
               <h3>Release Date:</h3>
-              <p>${song.releaseDate}</p>
+              <p>${s.releaseDate}</p>
             
               <hr>
               <br> 
@@ -71,7 +71,7 @@ function displaySong(event) {
               </div>
               </div>
             `
-          })
+          
         commentSection()
     })
 }
