@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('songs').addEventListener('click', getSongs)
-  commentSection()
+  //commentSection()
   //getSongs()
 })
 
@@ -19,6 +19,7 @@ function getSongs() {
              <a href="#" data-name="${song.trackName}"
              data-id="${song.trackId}"> ${song.trackName} </a>
             </li>
+
           `
         })
         attachLinks()
@@ -50,8 +51,28 @@ function displaySong(event) {
               <p>${song.artistName}</p>
               <h3>Release Date:</h3>
               <p>${song.releaseDate}</p>
+            
+              <hr>
+              <br> 
+
+              <div id="comments">
+                <h2>Write a comment!</h2>
+
+              <form id="comment-form">
+                <div class="field">
+                    <input id="new-comment" type="text" placeholder="New Comment" />
+                    <input type="submit" class="btn" value="Submit"/>
+                </div>
+              </form>
+            
+              <div id="commentsContainer">
+                <h3>Comments</h3>
+                <data-comment="">
+              </div>
+              </div>
             `
           })
+        commentSection()
     })
 }
 
@@ -64,8 +85,12 @@ function commentSection() {
     const userInput = event.target.querySelector('#new-comment').value
     const commentPTag = document.createElement('p')
     commentPTag.innerHTML = userInput
+    //commentPTag.insertAdjacentHTML('beforeend', userInput)
+    //commentsContainer.insertAdjacentHTML('afterend', `<p id="comment> `)
     commentsContainer.appendChild(commentPTag)
     commentForm.reset()
   })
 }
 //somehow target the objects in the array. Maybe try to use a for loop like results[i].trackName, so on?
+
+
