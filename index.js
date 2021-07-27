@@ -38,8 +38,6 @@ function displaySong(event) {
       .then(resp => resp.json())
       .then(data => {
         let s = data.results[0]
-        console.log(data)
-        console.log(s)
             info.innerHTML += `
               <h1>${s.trackName}</h1>
               <h2>Artist Name:</h2>
